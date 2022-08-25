@@ -1,0 +1,44 @@
+
+
+import React, {usestate} from "react";
+import {useForm} from "./Form_Hook";
+
+
+function ReportForm() {
+
+  const initialState = {
+    projectName: "",
+    progress: "",
+  };
+
+  const {onChange, onSubmit, values} = useForm(
+    ReportFormCallback,
+    initialState
+  );
+
+  async function ReportFormCallback() {
+
+  }
+
+  return (
+
+    <form onSubmit={onSubmit}>
+      <div>
+        <input
+         type="text"
+         name='projectName' 
+         />
+        <input 
+        type="text"
+        name='progress'
+        />
+        <button type='submit'>Post</button>
+      </div>
+    </form>
+
+
+  )
+
+}
+
+export default ReportForm;

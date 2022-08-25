@@ -1,0 +1,34 @@
+
+import react from "react";
+import React, {useState} from "react";
+
+
+
+
+const initialState = {
+  name: "",
+  password: "",
+};
+
+
+
+export const useForm = (initialState = {}) => {
+  const [values, setValues] = useState(initialState);
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({...values, [event.target.name]: event.target.value})
+  }
+};
+
+
+
+
+return (
+  <form onSubmit={onSubmit}> 
+    <div>
+      <input type="text"/>
+      <input type="text"/>
+    </div>
+  </form>
+
+)
